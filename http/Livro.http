@@ -1,0 +1,48 @@
+//Testes de Requisição de livros
+@baseUrl = http://localhost:4000
+
+###
+//Obtendo todos os livros
+GET {{baseUrl}}/livros
+Content-Type: application/json
+
+###
+//Inserindo um novo livro
+POST {{baseUrl}}/livros
+Content-Type: application/json
+
+{
+    "titulo": "A Menina que roubava Livros",
+    "autor": "Markus Zusak" ,
+    "genero": "Romance, Ficção histórica",
+    "codigobarra":"1347809367915" ,
+    "preco": "30.45" 
+}
+
+###
+@id =  5fb6ab9f660c7f4d643c8514
+
+//Obtendo um livro pelo id
+GET {{baseUrl}}/livros/{{id}}
+Content-Type: application/json
+
+###
+
+//Removendo o livro pelo id
+DELETE {{baseUrl}}/livros/{{id}}
+Content-Type:  application/json
+
+###
+
+//Alterando um livro
+PUT {{baseUrl}}/livros
+Content-Type: application/json
+
+{
+    "_id": "5fad968e83036b204cc390fe",
+    "titulo": "Harry Potter e a Câmara Secreta",
+    "autor": "J.K Rolling",
+    "genero": "Fantasia",
+    "codigobarra" : "1234567890125",
+    "preco" : "25.90"
+}

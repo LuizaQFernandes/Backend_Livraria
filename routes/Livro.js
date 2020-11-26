@@ -21,7 +21,7 @@ router.post("/",
     check("titulo", "Informe o titulo do livro").not().isEmpty(), // verifica se tudo está no formato correto
     check("autor", "Informe o nome do autor").not().isEmpty(),
     check("genero", "Informe o gênero do livro").not().isEmpty(),
-    check("codigobarra", "Informe um código de barras no formato EAN13").isNumeric().isLength({ min: 13, max: 13 }),
+    check("codigobarra", "Informe um código de barras com 13 números").isNumeric().isLength({ min: 13, max: 13 }),
     check("preco", "Informe um preço válido").isFloat({ min: 0 }),
   ],
   async (req, res) => {
